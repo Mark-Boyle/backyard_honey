@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  price: 9.99
+  size: 1
+  location: MyString
+  date_harvested: 2021-05-17
+  description: MyText
+  user: one
+  order: one
+
+two:
+  name: MyString
+  price: 9.99
+  size: 1
+  location: MyString
+  date_harvested: 2021-05-17
+  description: MyText
+  user: two
+  order: two
