@@ -1,2 +1,8 @@
 <h1>Backyard Honey</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<p>Honey for sale:</p>
+
+<ul>
+  <% @products.each do |product| %>
+    <li><%= product.name %> | <%= number_to_currency(product.price) %> <%= link_to 'Show', product %></li>
+  <% end %>
+</ul>

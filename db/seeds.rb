@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user1 = User.first
+
+
+user1.products.create(
+    name: 'Red Gum Honey',
+    price: 15.00,
+    size: 350,
+    location: 'Belgrave',
+    description: 'The beehive is surrounded by giant Red Gums.'
+)
