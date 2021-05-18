@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit]
 
   def index
     @products = Product.all
@@ -24,6 +25,9 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product.destroy
+    flash[:alert] = 'Successfully Deleted'
+    redirect_to products_path
   end
 
   def create

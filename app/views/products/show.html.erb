@@ -6,5 +6,7 @@
 <%= @product.size %>
 <%= @product.description %>
 
+<% if current_user == @product.user %>
 <p><%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <%= link_to 'Edit', edit_product_path(@product)%>
+<% end %>
