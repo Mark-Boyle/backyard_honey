@@ -1,2 +1,20 @@
-<h1>Products#edit</h1>
-<p>Find me in app/views/products/edit.html.erb</p>
+<h1>Edit: <%= @product.name %></h1>
+
+<%= form_with model: @product do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <br>
+    <%= form.label :price %>
+    <%= form.number_field :price, min: 0, max: 200%>
+    <br>
+    <%= form.label :size %>
+    <%= form.number_field :size, min: 0, max: 2000 %>
+    <br>
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+    <br>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+    <br>
+    <%= form.submit%>
+<%end%>

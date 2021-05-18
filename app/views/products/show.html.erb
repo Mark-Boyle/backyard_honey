@@ -1,2 +1,10 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<h1>Product</h1>
+
+<%= @product.name %>
+<%= @product.price %>
+<%= @product.location %>
+<%= @product.size %>
+<%= @product.description %>
+
+<p><%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<%= link_to 'Edit', edit_product_path(@product)%>

@@ -16,6 +16,11 @@ class ProductsController < ApplicationController
   end
 
   def update
+    if @product.update(product_params)
+      redirect_to @product
+    else
+      render :edit
+    end
   end
 
   def destroy
