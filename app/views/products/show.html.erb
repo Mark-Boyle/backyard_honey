@@ -1,12 +1,35 @@
-<h1>Product</h1>
+<h1><%= @product.name %></h1>
 
-<%= @product.name %>
-<%= @product.price %>
-<%= @product.location %>
-<%= @product.size %>
-<%= @product.description %>
 
-<% if current_user == @product.user %>
-<p><%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-<%= link_to 'Edit', edit_product_path(@product)%>
-<% end %>
+<div class="card" style="width: 18rem;">
+  <%= image_tag "honeyjar.jpg", :class => "image"%>
+  <div class="card-body">
+    <h5 class="card-title"><%= @product.name %></h5>
+    <p class="card-text"><%= @product.price %></p>
+    <p class="card-text"><%= @product.location %></p>
+    <p class="card-text"><%= @product.size %></p>
+    <p class="card-text"><%= @product.description %></p>
+    <% if current_user == @product.user %>
+        <br>
+        <button type="button" class="btn btn-light"><%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+        <br>
+        <button type="button" class="btn btn-light"><%= link_to 'Edit', edit_product_path(@product)%></button>
+    <% end %>
+  </div>
+</div>
+
+
+<%# <%= image_tag "honeyjar.jpg", :class => "image"%> 
+
+
+<%# <%= @product.price %>
+<%# <%= @product.location %> 
+<%# <%= @product.size %> 
+<%# <%= @product.description %> 
+
+<%# <% if current_user == @product.user %>
+<%# <br>
+<button type="button" class="btn btn-light"><%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+<%# <br> %>
+<%# <button type="button" class="btn btn-light"><%= link_to 'Edit', edit_product_path(@product)%></button>
+<%# <% end %> 

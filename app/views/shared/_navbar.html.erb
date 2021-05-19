@@ -11,7 +11,8 @@
       
       <% if user_signed_in? %>
           <li class="nav-item">
-            <a class="nav-link" href="/products/new">Sell Your Honey</a>
+            <a href="/products/new"><button class="btn btn-warning" type="button">Sell Your Honey</button></a>
+            <%# <a class="nav-link" href="/products/new">Sell Your Honey</a> %>
           </li>
           <li class="nav-item">
             <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"nav-link" %>
