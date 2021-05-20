@@ -2,6 +2,7 @@
 
 
 <div class="card" style="width: 18rem;">
+  <%= image_tag @product.picture, class: "card-img-top" if @product.picture.attached? %>
   <%= image_tag "honeyjar.jpg", :class => "image"%>
   <div class="card-body">
     <h5 class="card-title"><%= @product.name %></h5>

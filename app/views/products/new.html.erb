@@ -17,5 +17,8 @@
     <%= form.label :description %>
     <%= form.text_area :description %>
     <br>
+    <%= form.label :picture %>
+    <%= form.file_field :picture, accept: 'image/png, image/jpg, image/jpeg'%>
+    <br>
     <%= form.submit%>
 <%end%>
