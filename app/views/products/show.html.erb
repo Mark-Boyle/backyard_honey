@@ -1,15 +1,15 @@
+<div class="show-page">
+<div class ="card-container">
 <h1><%= @product.name %></h1>
-
-
 <div class="card" style="width: 18rem;">
   <% if @product.picture.attached? %>
     <%= image_tag @product.picture, class: "card-img-top"%> 
   <% else %>
-    <%= image_tag "honeyjar.jpg", :class => "image"%>
+    <%= image_tag "honeyjar.jpg", class: "image"%>
   <% end %>
   <div class="card-body">
     <h5 class="card-title"><%= @product.name %></h5>
-    <p class="card-text">Price: <%= @product.price %></p>
+    <p class="card-text">Price: $<%= @product.price %></p>
     <p class="card-text">Location: <%= @product.location %></p>
     <p class="card-text">Size: <%= @product.size %></p>
     <p class="card-text">Description: <%= @product.description %></p>
@@ -20,4 +20,6 @@
         <button type="button" class="btn btn-light"><%= link_to 'Edit', edit_product_path(@product)%></button>
     <% end %>
   </div>
+</div>
+</div>
 </div>
