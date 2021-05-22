@@ -4,6 +4,8 @@
 
 h1 {
     color: orange;
+    text-align: center;
+    font-family: sans-serif;
 }
 
 .show-page{
@@ -16,4 +18,22 @@ h1 {
     border: black solid 2px;
     border-radius: 20px;
     padding: 15px;
+    max-width: 20%;
+    margin: 20px
+}
+
+.page-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-img-custom{
+    width: 95%;
+    height: 60%;
+}
+
+.form{
+    margin-left: 40px;
 }

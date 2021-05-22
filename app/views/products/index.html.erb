@@ -1,8 +1,18 @@
 <h1>Backyard Honey</h1>
-<p>Honey for sale:</p>
 
-<ul>
+<div class="page-container">
   <% @products.each do |product| %>
-    <li><%= product.name %> | <%= number_to_currency(product.price) %> <%= link_to 'Show', product %></li>
+    <div class="card-body card-container">
+    <% if product.picture.attached? %>
+      <%= image_tag product.picture, class: "card-img-custom"%> 
+    <% else %>
+      <%= image_tag "honeyjar.jpg", class: "card-img-custom"%>
+    <% end %>
+    <h5 class="card-title"><%= product.name %></h5>
+    <p class="card-text">Price: <%= number_to_currency(product.price) %></p>
+    <p class="card-text">Location: <%= product.location %></p>
+    <p class="card-text">Size: <%= product.size %>ml</p>
+    <%= link_to 'Show', product, class: "btn btn-warning"%>
+    </div>
   <% end %>
-</ul>
+</div>
