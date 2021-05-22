@@ -1,11 +1,11 @@
 <div class="show-page">
-<div class ="card-body card-container">
+<div class ="card-body">
 <h1><%= @product.name %></h1>
 <div class="card" style="width: 18rem;">
   <% if @product.picture.attached? %>
-    <%= image_tag @product.picture, class: "card-img-custom"%> 
+    <%= image_tag @product.picture, class: "card-img-top"%> 
   <% else %>
-    <%= image_tag "honeyjar.jpg", class: "card-img-custom"%>
+    <%= image_tag "honeyjar.jpg", class: "card-img-top"%>
   <% end %>
   <div class="card-body">
     <h5 class="card-title"><%= @product.name %></h5>
