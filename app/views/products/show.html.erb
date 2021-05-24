@@ -18,8 +18,13 @@
         <button type="button" class="btn btn-light"><%= link_to 'Delete', @product, method: :delete, data: { confirm: 'Are you sure?' } %></button>
         <br>
         <button type="button" class="btn btn-light"><%= link_to 'Edit', edit_product_path(@product)%></button>
+      <% else %>
+        <%= button_tag "Buy",data: {stripe:'payment', session_id: @session_id, public_key: Rails.application.credentials.dig(:stripe, :public_key) }, id:'stripe-button', class:'btn btn-warning' %>
     <% end %>
   </div>
 </div>
 </div>
 </div>
+
+<%= javascript_include_tag "https://js.stripe.com/v3/" %>
+<%= javascript_pack_tag 'stripe' %>
