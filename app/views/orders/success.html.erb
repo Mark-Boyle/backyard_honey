@@ -1,0 +1,20 @@
+<h1>Payment successful!</h1>
+<h1>Congratulations on your purchase!</h1>
+
+<div class ="card-body">
+<h1><%= @product.name %></h1>
+<div class="card" style="width: 18rem;">
+  <% if @product.picture.attached? %>
+    <%= image_tag @product.picture, class: "card-img-top"%> 
+  <% else %>
+    <%= image_tag "honeyjar.jpg", class: "card-img-top"%>
+  <% end %>
+  <div class="card-body">
+    <h5 class="card-title"><%= @product.name %></h5>
+    <p class="card-text">Price: $<%= @product.price %></p>
+    <p class="card-text">Location: <%= @product.location %></p>
+    <p class="card-text">Size: <%= @product.size %></p>
+    <p class="card-text">Description: <%= @product.description %></p>
+   </div>
+</div>
+</div>
