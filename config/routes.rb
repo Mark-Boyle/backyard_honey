@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :products
   get '/purchases/success', to: 'orders#success'
   post '/payments/webhook', to: 'orders#webhook'
+  get '/orders', to: 'orders#index', as: 'orders'
+  resources :reviews
 end
-
 

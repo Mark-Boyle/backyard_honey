@@ -1,2 +1,15 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<h1>Write a Review for <%= "#{@product}" %></h1>
+<div class="form">
+<%= form_with model: @review do |form| %>
+    <%= form.label :score %><br>
+    <%= form.number_field :score, min: 0, max: 10%>
+    <br>
+
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+    <br>
+
+    <br><br>
+    <%= form.submit%>
+<%end%>
+</div>

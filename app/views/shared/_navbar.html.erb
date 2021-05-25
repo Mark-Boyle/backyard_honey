@@ -10,9 +10,11 @@
       </li>
       
       <% if user_signed_in? %>
+          <li class="nav-item">       
+            <%= link_to "Sell Honey", new_product_path, class:"nav-link text-warning"%>
+          </li>
           <li class="nav-item">
-            <a href="/products/new"><button class="btn btn-warning" type="button">Sell Your Honey</button></a>
-            <%# <a class="nav-link" href="/products/new">Sell Your Honey</a> %>
+            <%= link_to "Purchase History", orders_path, class:"nav-link text-warning"%>
           </li>
           <li class="nav-item">
             <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"nav-link text-warning" %>
