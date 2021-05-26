@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
     Order.create(user_id: user_id, product_id: product_id)
   end
 
-  private
+  private     #private means that the following methods are only used in this controller.
 
   def set_product
     @product = Product.find(params[:id])

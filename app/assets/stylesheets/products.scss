@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 h1 {
-    color: orange;
-    text-align: center;
-    font-family: sans-serif;
+    color: orange;            //Set the colour of the heading for each page.
+    text-align: center;         //Puts the heading in the middle of the page.
+    font-family: sans-serif;    //Sets the font of the heading for each page.
 }
 
 // .show-page{
@@ -35,9 +35,10 @@ h1 {
 // }
 
 .form{
-    margin-left: 40px;
+    text-align: center;   //Puts the form in the middle of the page.
+    // margin-left: 40px;
 }
 
 .home-image{
-    max-width: 15%;
+    max-width: 15%;     //Set the size of the bee next the the heading.
 }

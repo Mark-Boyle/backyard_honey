@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
     end
   end
 
-  private
+  private   #private means that the following methods are only used in this controller.
 
   def set_product
     @product = Product.find(params[:id])
