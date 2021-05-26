@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
            user_id: current_user ? current_user.id : nil
           }
         },
-        success_url: "#{root_url}payments/success?productId=#{@product.id}",
+        success_url: "#{root_url}payments/success?product_id=#{@product.id}",
         cancel_url: "#{root_url}products"
     )
     @session_id = stripe_session.id

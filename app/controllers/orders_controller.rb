@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
   end
 
   def success
-    @product = Product.find(params[:productId])
+    @product = Product.find(params[:product_id])
   end
 
   def webhook
