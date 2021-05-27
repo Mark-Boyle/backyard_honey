@@ -8,17 +8,22 @@
       <li class="nav-item active">
         <a class="nav-link text-warning" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
-      <% if user_signed_in? %>
-        <li class="nav-item">       
+      <% if user_signed_in? %>   <%#Checks if a user is signed in%>
+        <li class="nav-item"> 
+        <%#Button to go to the products/new page to add a new product if the user is signed in%>      
           <%= link_to "Sell Honey", new_product_path, class:"nav-link text-warning"%>
         </li>
         <li class="nav-item">
+        <%#Button to go to orders/index page if the user is signed in. Shows all the purchase history.%>
           <%= link_to "Purchase History", orders_path, class:"nav-link text-warning"%>
         </li>
         <li class="nav-item">
+        <%#Log out button to go to users/sign_out page if there is a user signed in%>
           <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"nav-link text-warning" %>
           <%else%>
+          <%#Button to go to the users/sign_in page if no user is signed in%>
           <%= link_to "Sign In", new_user_session_path, class:"nav-link text-warning"%>
+          <%#Button to go to the users/sign_up page if no user is signed in%>
           <%= link_to "Sign Up", new_user_registration_path, class:"nav-link text-warning"%>
         </li>
       <% end %>

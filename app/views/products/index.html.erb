@@ -1,20 +1,21 @@
 <h1><%= image_tag "honey-bee.png", class: "home-image"%>Backyard Honey</h1>
 <div class="container">
   <div class="row">
+  <%#Goes through each product in the Product model and shows in on the home page in a card%>
     <% @products.each do |product| %>
       <div class="col-md-4">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <% if product.picture.attached? %>
-              <%= image_tag product.picture, class: "card-img-top"%> 
+            <% if product.picture.attached? %>   <%#Checks if the product has an image attached to it.%> 
+              <%= image_tag product.picture, class: "card-img-top"%>    <%#If an image is attached it is shown on the card %>
             <% else %>
-              <%= image_tag "honeyjar.jpg", class: "card-img-top"%>
+              <%= image_tag "honeyjar.jpg", class: "card-img-top"%>    <%#If no image is attached, a default one from assets/images is used.%>
             <% end %>
-            <h5 class="card-title"><%= product.name %></h5>
-            <p class="card-text">Price: <%= number_to_currency(product.price) %></p>
-            <p class="card-text">Location: <%= product.location %></p>
-            <p class="card-text">Size: <%= product.size %>ml</p>
-            <%= link_to 'Show', product, class: "btn btn-warning"%>
+            <h5 class="card-title"><%= product.name %></h5>        <%#Displays the product name on the card.%>
+            <p class="card-text">Price: <%= number_to_currency(product.price) %></p>       <%#Displays the price on the card.%>
+            <p class="card-text">Location: <%= product.location %></p>           <%#Displays the location on the card.%>
+            <p class="card-text">Size: <%= product.size %>ml</p>             <%#Displays the product size on the card.%>
+            <%= link_to 'Show', product, class: "btn btn-warning"%>    <%#Button to go the show page of the product%>
           </div>
         </div>
       </div>

@@ -1,27 +1,29 @@
 <h1>Purchased Items</h1>
 
-<% orders = @orders.map do |order| %>
-  <% if order.user_id == current_user.id%>
+<%# The map method is used to go through all the orders and make an array of any order that belongs to the current user%>
+<% orders = @orders.map do |order| %> 
+  <% if order.user_id == current_user.id%>   <%#Comparing the user id on the order to the id of the current user%>
     <% order.product_id %>
   <% end %>
 <% end %>
 <div class="container">
   <div class="row">
+  <%#Each method is used to find all the products that have an id that matches the product id of the orders from the current user%>
     <% @products.each do |product| %>
       <% if orders.include?(product.id)  %> 
       <div class ="card-body">
         <div class="card" style="width: 18rem;">
-          <% if product.picture.attached? %>
-            <%= image_tag product.picture, class: "card-img-top"%> 
+          <% if product.picture.attached? %>     <%#Checks if the product has an image attached to it.%> 
+            <%= image_tag product.picture, class: "card-img-top"%>  <%#If an image is attached it is shown on the card %>  
           <% else %>
-            <%= image_tag "honeyjar.jpg", class: "card-img-top"%>
+            <%= image_tag "honeyjar.jpg", class: "card-img-top"%>   <%#If no image is attached, a default one from assets/images is used.%>
           <% end %>
           <div class="card-body">
-            <h5 class="card-title"><%= product.name %></h5>
-            <p class="card-text">Price: $<%= product.price %></p>
-            <p class="card-text">Location: <%= product.location %></p>
-            <p class="card-text">Size: <%= product.size %></p>
-            <p class="card-text">Description: <%= product.description %></p>
+            <h5 class="card-title"><%= product.name %></h5>         <%#Displays the product name on the card.%>
+            <p class="card-text">Price: <%= number_to_currency(product.price) %></p>          <%#Displays the price on the card.%>
+            <p class="card-text">Location: <%= product.location %></p>       <%#Displays the location on the card.%>
+            <p class="card-text">Size: <%= product.size %></p>                   <%#Displays the product size on the card.%>
+            <p class="card-text">Description: <%= product.description %></p>      <%#Displays the product description on the card.%>
             <%# <%= link_to "Write a Review", new_review_path, class:"nav-link btn-warning"%>
           </div>
         </div>

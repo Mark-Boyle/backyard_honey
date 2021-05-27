@@ -1,20 +1,21 @@
 <h1>Edit: <%= @product.name %></h1>
 
+<%#The form to get user input for editing a product%>
 <%= form_with model: @product do |form| %>
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name %>    <%#Input to receive an edit to the product name%>
     <br>
     <%= form.label :price %>
-    <%= form.number_field :price, min: 0, max: 200%>
+    <%= form.number_field :price, min: 0, max: 200%>  <%#The price can only be between $0 and $200%>
     <br>
     <%= form.label :size %>
-    <%= form.number_field :size, min: 0, max: 2000 %>
+    <%= form.number_field :size, min: 0, max: 2000 %>    <%#Input to change the product size. Can only be between 0 and 2000ml%>
     <br>
     <%= form.label :location %>
-    <%= form.text_field :location %>
+    <%= form.text_field :location %>    <%#Input to edit the product location%>
     <br>
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description %>    <%#Input to edit the product description%>
     <br>
-    <%= form.submit%>
+    <%= form.submit%>          <%#Button to submit the new information%>
 <%end%>

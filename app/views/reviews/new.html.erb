@@ -1,15 +1,16 @@
 <h1>Write a Review for <%= "#{@product}" %></h1>
 <div class="form">
+<%#Form for creating a review  %>
 <%= form_with model: @review do |form| %>
     <%= form.label :score %><br>
-    <%= form.number_field :score, min: 0, max: 10%>
+    <%= form.number_field :score, min: 0, max: 10%>    <%#Score can be between 0 and 10%>
     <br>
 
     <%= form.label :description %><br>
-    <%= form.text_area :description %>
+    <%= form.text_area :description %>   <%#Input for a description of the review%>
     <br>
 
     <br><br>
-    <%= form.submit%>
+    <%= form.submit%>        <%#Button to submit the review information%>
 <%end%>
 </div>

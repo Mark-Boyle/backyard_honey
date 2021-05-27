@@ -57,8 +57,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "simple_form", "~> 5.1"
 
+#Gem for user authentication
 gem "devise", "~> 4.8"
 
+#Gem for image storing in AWS S3
 gem "aws-sdk-s3", "~> 1.94"
 
+#Gem for payments with Stripe
 gem "stripe", "~> 5.33"

@@ -23,10 +23,10 @@ class ProductsController < ApplicationController
       customer_email: current_user ? current_user.email : nil,       #Sets the email for stripe to the email of the user if there is a user logged in.
       line_items:[{ 
         amount: (@product.price * 100).to_i,       #Stripe only deals in cents, so the product price needs to be converted to cents and made into an integer.
-        name: @product.name,
-        description: @product.description,
-        currency: 'aud',
-        quantity: 1,
+        name: @product.name,                   #Adds the product name to the payment
+        description: @product.description,      #Adds the product description to the payment
+        currency: 'aud',                        #Sets the currency for the payment
+        quantity: 1,                            #Sets the quantity of products for the payment
        }],
        payment_intent_data: { 
          metadata: { 
@@ -34,15 +34,16 @@ class ProductsController < ApplicationController
            user_id: current_user ? current_user.id : nil
           }
         },
-        success_url: "#{root_url}payments/success?product_id=#{@product.id}",
-        cancel_url: "#{root_url}products"
+        success_url: "#{root_url}payments/success?product_id=#{@product.id}",   #Setting the url to go to if the payment is successful.
+        cancel_url: "#{root_url}products"          #Setting the url to go to if the payment is cancelled.
     )
     @session_id = stripe_session.id
   end
 
+  #The product is updated using the the params from the product_params method.
   def update
     if @product.update(product_params)
-      redirect_to @product
+      redirect_to @product             #Once a product is updated the browser goes to the show page of the product.
     else
       render :edit
     end
@@ -51,8 +52,8 @@ class ProductsController < ApplicationController
   #To Delete a Product
   def destroy
     @product.destroy
-    flash[:alert] = 'Successfully Deleted'
-    redirect_to products_path
+    flash[:alert] = 'Successfully Deleted'    #Displays a message to show the product has been deleted
+    redirect_to products_path                 #Once the product is deleted the browser goes back to the main page.
   end
 
   #To create a new product
@@ -71,7 +72,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])   #Sets the product instance variable to the product that is provide by the params.
   end
 
+ 
   def product_params
-    params.require(:product).permit(:name, :price, :size, :location, :description, :date_harvested, :picture)  #Allows which params are to be accepted for the product model.
+    params.require(:product).permit(:name, :price, :size, :location, :description, :picture)  #Allows which params are to be accepted for the product model.
   end
 end

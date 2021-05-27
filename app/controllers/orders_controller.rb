@@ -35,11 +35,7 @@ class OrdersController < ApplicationController
     payment = Stripe::PaymentIntent.retrieve(payment_intent_id)
     product_id = payment.metadata.product_id
     user_id = payment.metadata.user_id
-    puts " "
-    puts product_id
-    puts ' '
     Order.create(user_id: user_id, product_id: product_id)
-
   end
 
   private     #private means that the following methods are only used in this controller.
